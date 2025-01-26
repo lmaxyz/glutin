@@ -261,14 +261,9 @@ impl Display {
         let mut attrs = Vec::<EGLAttrib>::with_capacity(5);
         let (platform, display) = match display {
             RawDisplayHandle::Wayland(handle)
-                if extensions.contains("EGL_KHR_platform_wayland") =>
+                if extensions.contains("EGL_KHR_platform_wayland") || extensions.contains("EGL_KHR_platform_android") =>
             {
                 (egl::PLATFORM_WAYLAND_KHR, handle.display.as_ptr())
-            },
-            RawDisplayHandle::Wayland(handle)
-                if extensions.contains("EGL_KHR_platform_android") =>
-            {
-                (egl::PLATFORM_ANDROID_KHR, handle.display.as_ptr())
             },
             RawDisplayHandle::Xlib(handle) if extensions.contains("EGL_KHR_platform_x11") => {
                 attrs.push(egl::PLATFORM_X11_SCREEN_KHR as EGLAttrib);
