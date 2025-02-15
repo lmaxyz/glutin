@@ -242,7 +242,7 @@ impl Display {
         let (platform, mut display) = match display {
             #[cfg(wayland_platform)]
             RawDisplayHandle::Wayland(handle)
-                if extensions.contains("EGL_KHR_platform_wayland") =>
+                if extensions.contains("EGL_KHR_platform_wayland") || extensions.contains("EGL_KHR_platform_android") =>
             {
                 (egl::PLATFORM_WAYLAND_KHR, handle.display)
             },
