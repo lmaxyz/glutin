@@ -164,6 +164,7 @@ impl Display {
         let shared_context = if let Some(shared_context) =
             context_attributes.shared_context.as_ref()
         {
+            println!("Has shared context");
             match shared_context {
                 RawContext::Egl(shared_context) => *shared_context,
                 #[allow(unreachable_patterns)]
