@@ -56,6 +56,7 @@ impl Display {
         };
 
         let is_one_five = self.inner.version >= Version::new(1, 5);
+        println!("Is one_five: {}", is_one_five);
         if is_one_five || self.inner.display_extensions.contains("EGL_KHR_create_context") {
             let mut flags = 0;
 
