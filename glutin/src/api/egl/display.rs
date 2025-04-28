@@ -541,6 +541,8 @@ impl Display {
             display => display,
         };
 
+        println!("Display: {:#?}", display);
+
         // Load extensions.
         let display_extensions = get_extensions(egl, *display);
         let features = Self::extract_display_features(&display_extensions, version);
