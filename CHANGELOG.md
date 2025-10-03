@@ -2,6 +2,11 @@
 
 - **Breaking:** Added `make_current_surfaceless(self)` for `{Possibly,Not}CurrentGlContext`.
 
+# Version 0.32.3
+
+- Bump MSRV from `1.70` to `1.71`.
+- Updated `objc2` dependency to `v0.6`.
+
 # Version 0.32.2
 
 - Added `PossiblyCurrentContext::make_not_current_in_place(&self)` for when `Send` capability of `NotCurrentContext` is not required.
